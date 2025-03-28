@@ -89,6 +89,7 @@ This is where the "pools" will be created. These pools determine how token emiss
 10) Click save to move to the next pool;
     
 > [!Note]
+> You need to know the poolid to test staking using the ABI. If you create four pools, the poolid set will be `0`,`1`,`2`,`3` based on the order they were created.
 > Initial reward & rewards decrease across all pools determine total token supply
 
 ![image](https://github.com/user-attachments/assets/6a782051-feca-4d98-b3fb-cd553d06a44a)
@@ -104,6 +105,22 @@ This is where the "pools" will be created. These pools determine how token emiss
 Congratulations on deploying your MOR20 smart contracts!
 
 ![image](https://github.com/user-attachments/assets/b6f2de33-82e6-49a8-98db-d9605c8ee4b8)
+
+## View Testnet Contracts
+Now that your MOR20 smart contracts are deployed, you can view them on the [MOR20 Dashboard (testnet)](https://dashboard.mor.org/#/mor20-ecosystem?network=testnet).
+
+Once you connect to testnet with the wallet used for deployment, you will see the address for your new token and the MOR20 contracts.
+
+![image](https://github.com/user-attachments/assets/2f9006c4-534d-48b5-8660-2b362f1aea4b)
+
+The following are ready for testing:
+
+1) Token - The MOR20 Network Token with integrated LayerZero OFT (Omnichain Fungible Token) standard.
+2) Distribution - The contract that distributes the "Token" to the depositors and the team members.
+3) L1 Sender - A contract that allows to communicate between L1 and L2. It is used to send a minting request to the L2 using the Layer Zero. It is also used to transfer deposited tokens from the L1 to the L2.
+4) L2 Message Receiver - A contract that receives Layer Zero messages from the "L1Sender" contract.
+5) L2 Token Receiver V2 - A contract that receives tokens from the L1Sender contract and used for Uniswap market making with extended functionality.
+
 
 ## Testing
 If you would like to manually test staking within the contract and review token emissions, you can continue with this guide. For any testing, you will need to use stETHmock, a test token created to simulate stETH on Sepolia. 
